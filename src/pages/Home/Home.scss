@@ -1,0 +1,23 @@
+.books-container{
+
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    
+}
+
+
+.quantity-box{
+  display: flex;
+  justify-content: center;
+
+  .quantity{
+      padding: 10px;
+      font-size: 20px;
+      border: 1px solid black;
+      background-color: #1976d2;
+      color: white;
+  }
+
+}
