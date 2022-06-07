@@ -1,28 +1,39 @@
-import React from 'react';
-import { AppBar, Box, Button, IconButton, Toolbar, Typography } from '@mui/material';
-import { Container } from '@mui/system';
-import { Link } from 'react-router-dom';
+import * as React from 'react';
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
+import IconButton from '@mui/material/IconButton';
 import './Header.scss';
-
+import { Link } from 'react-router-dom';
+import logo from '../../images/logo2.png'
 
 export default function Header() {
 
     return (
+        <Box sx={{ flexGrow: 1 }}>
+        <AppBar position="static">
+            <Toolbar>
+            <IconButton
+                size="large"
+                edge="start"
+                color="inherit"
+                aria-label="menu"
+                sx={{ mr: 10}}
+                >
+            </IconButton>
 
-        <AppBar position="fixed">
-            <Container fixed>
-                <Toolbar>
-                    <IconButton edge="start" color="inherit">
-                    </IconButton>
-                    <div className='div-icon'>  
-                        <Typography variant="h6" mr={50}><Link className='color library' to='/'>Library</Link></Typography>
-                    </div>
-                    <Typography variant="h6" mr={50}><Link className='color' to='/crud'>+ Add books</Link></Typography>
-                    <div className='div-icon'>
-                        <Typography variant="h6"><Link className='color' to='/favorites'>Favorites</Link></Typography>
-                    </div>
-                </Toolbar>
-            </Container>
-        </AppBar>   
+                <div className='logo-box'>
+                    <Link to='/'><img className='logo' src={logo} alt="logo" /></Link>
+                </div>
+                <Typography mr={10}  variant="h6"><Link className='color library' to='/'>Home</Link></Typography>
+                <Typography mr={10} variant="h6"><Link className='color' to='/favorites'>Favorites</Link></Typography>
+                <Button variant="contained" color="success">
+                    <Link className='color' to='/crud'>+ Add books</Link>
+                </Button>
+            </Toolbar>
+        </AppBar>
+        </Box>
     )
 }
