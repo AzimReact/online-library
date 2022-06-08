@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import Book from '../../components/Book/Book'
 import './Home.scss'
 import { useDispatch, useSelector } from 'react-redux';
-import { addDelFaovorite } from '../../store/actions';
+import { addDelFavorite } from '../../store/actions';
 import { useNavigate } from 'react-router-dom';
 import Functions from '../../components/Functions/Functions';
 import { sortByAsc, sortByDesc } from '../../store/actions';
@@ -10,7 +10,7 @@ import { sortByAsc, sortByDesc } from '../../store/actions';
 
 export default function Home() {
     const books = useSelector(store => store.books);
-    console.log(books);
+
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
@@ -19,7 +19,7 @@ export default function Home() {
         const bookIndex = booksCopy.findIndex(book => book.id === id);
         booksCopy[bookIndex] = {...booksCopy[bookIndex], isFavorite: !booksCopy[bookIndex].isFavorite}
 
-        dispatch(addDelFaovorite(booksCopy));
+        dispatch(addDelFavorite(booksCopy));
         navigate('/favorites');
     }
     

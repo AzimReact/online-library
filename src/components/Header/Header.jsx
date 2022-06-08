@@ -5,9 +5,9 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
-import './Header.scss';
 import { Link, NavLink } from 'react-router-dom';
-import logo from '../../images/logo2.png'
+import logo from '../../images/logo.png'
+import './Header.scss';
 
 export default function Header() {
 
@@ -30,7 +30,7 @@ export default function Header() {
                     <Typography mr={10} variant="h6"><NavLink className={({isActive}) => isActive ? "header__active-link" : "color"} to='/'>Home</NavLink></Typography>
                     <Typography mr={10} variant="h6"><NavLink className={({isActive}) => isActive ? "header__active-link" : "color"} to='/favorites'>Favorites</NavLink></Typography>
                     <Button variant="contained" color="success">
-                        <NavLink className='color' to='/crud'>+ Add books</NavLink>
+                        <Link className='color' to='/crud'>+ Add books</Link>
                     </Button>
                 </Toolbar>
             </AppBar>

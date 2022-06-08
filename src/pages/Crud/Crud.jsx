@@ -23,7 +23,6 @@ export default function Crud() {
   const navigate = useNavigate();
   const { id } = useParams();
 
-
   useEffect(() => {
     if (id) setForm(books.find(book => book.id === Number(id)));
     return () => {
@@ -44,13 +43,24 @@ export default function Crud() {
   }
 
   const handleSaveBook = () => {
-    if (id) {
-      dispatch(editBook(editedBook));
-      navigate('/');
-    } else {
-      dispatch(addBook(editedBook));
-      navigate('/');
-    };
+
+    if(form.name === ''){
+      alert('Name cannot be empty!')
+    }else if(form.author === ''){
+      alert('Author cannot be empty!')
+    }else if(form.category === ''){
+      alert('Category cannot be empty!')
+    } else if (form.img === '' ) {
+      alert('Image cannot be empty!')
+    } else{
+      if (id) {
+        dispatch(editBook(editedBook));
+        navigate('/');
+      } else {
+        dispatch(addBook(editedBook));
+        navigate('/');
+      };
+    }
   }
 
   const handleDeleteBook = () => {

@@ -1,4 +1,4 @@
-export const ADD_DEL_FAVORITE = 'TOOGLE_FAVORITE'
+export const ADD_DEL_FAVORITE = 'ADD_DEL_FAVORITE'
 
 export const ADD_BOOK = 'ADD_BOOK'
 

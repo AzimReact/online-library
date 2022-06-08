@@ -13,8 +13,6 @@ export default function Functions({firstFunction, secondFunction}) {
                   <FaSortAlphaUpAlt onClick={firstFunction}/>
                 </div>
               </div>
-        
-
             </div>
 
   )

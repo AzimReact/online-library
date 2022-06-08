@@ -16,9 +16,16 @@ export default function Book({ book, toggleFavorite }) {
 
     return (
         <div className='item'>
-            <Button color="secondary" variant="contained" endIcon={<FaHeart color={`${book.isFavorite ? 'red' : ''}`} />} onClick={() => toggleFavorite(book.id)}>
-                Add to favorite
-            </Button>
+
+            {
+            book.isFavorite === true
+                ?   <Button color="success" variant="contained" endIcon={<FaHeart color='red' />} onClick={() => toggleFavorite(book.id)}>
+                        Remove from favorite
+                    </Button>
+                :   <Button color="success" variant="contained" endIcon={<FaHeart color='white' />} onClick={() => toggleFavorite(book.id)}>
+                        Add to favorite
+                    </Button>
+            }
             
             <div  className='img-box'>
                 <img className='img' src={book.img} alt="item.img" />
@@ -27,11 +34,12 @@ export default function Book({ book, toggleFavorite }) {
                 <h2>Name: {book.name}
                 </h2>
             </div   >
-                <h2>Author: {book.author}</h2>
-                <h3>Category: {book.category}</h3>
-                <div onClick={() => goToEditPage(book.id)} className='update'>
-                    <FaPenAlt />
-            </div>
+            <h2>Author: {book.author}</h2>
+            <h3>Category: {book.category}</h3>
+
+            <Button color="success" variant="contained" endIcon={<FaPenAlt />} onClick={() => goToEditPage(book.id)}>
+                Edit or Delete 
+            </Button>
 
         </div>
     )

@@ -1,6 +1,6 @@
 import * as actions from './actionTypes';
 
-export const addDelFaovorite = books => ({
+export const addDelFavorite = books => ({
   type: actions.ADD_DEL_FAVORITE,
   payload: books
 })
